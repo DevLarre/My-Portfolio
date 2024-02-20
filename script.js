@@ -1,0 +1,31 @@
+function handlePlaceholder(element, placeholder) {
+    element.addEventListener('focus', function() {
+        if (this.placeholder === placeholder) {
+            this.placeholder = '';
+        }
+    });
+
+element.addEventListener('blur', function(){
+    if (this.placeholder === '') {
+        this.placeholder = placeholder;
+    }
+});
+}
+
+handlePlaceholder(placeEnd, 'NAME');
+handlePlaceholder(placeEnd1, 'E-MAIL');
+handlePlaceholder(message, 'MESSAGE');
+
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
+let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener("scroll", function() {
+    if (window.pageYOffset > 100) { 
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+});
